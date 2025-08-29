@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import userImg from "../assets/user.svg";
+import { useEffect } from "react";
 
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -46,11 +47,19 @@ const Navbar = ({ bgColor }) => {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
+  useEffect(() => {
+  if (isOpen) {
+    document.body.style.overflow = "hidden"; // disable scroll
+  } else {
+    document.body.style.overflow = "auto"; // re-enable scroll
+  }
+}, [isOpen]);
+
   return (
     <>
       {/* Navbar */}
       <nav
-        className={`w-full flex items-center justify-between px-6 md:px-10 h-[70px] my-1 md:my-0 md:h-[84px] z-50
+        className={`w-full flex items-center justify-between px-6 md:px-10 h-[70px] md:h-[84px] z-50
         ${
           isHome
             ? "fixed left-0 top-0 backdrop-blur-md bg-white text-black shadow-sm"
@@ -136,7 +145,7 @@ const Navbar = ({ bgColor }) => {
 
       {/* Mobile Menu Dropdown */}
   {isOpen && (
-  <div className="absolute top-16 left-0 w-full h-screen bg-white text-black flex flex-col items-center py-6 space-y-4 shadow-md md:hidden z-20 animate-slide-down">
+  <div className="fixed inset-0 top-14 w-full h-auto bg-white text-black flex flex-col items-center py-6 space-y-4 shadow-md md:hidden z-20 animate-slide-down">
     {menus.map((menu, idx) => (
       <div key={idx} className="w-full text-center">
         {!menu.items ? (

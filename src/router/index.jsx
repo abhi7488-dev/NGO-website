@@ -5,6 +5,8 @@ import Member from "../Pages/Member";
 import Volunteer from "../Pages/Volunteer";
 import Community from "../Pages/Community";
 
+import Events from "../Pages/Events";
+
 
 const Router = () => {
   return (
@@ -15,6 +17,7 @@ const Router = () => {
       <Route path="/membership" element={<Member />} />
       <Route path="/membership/volunteer" element={<Volunteer />} />
       <Route path="/community/chat" element={<Community />} />
+      <Route path="/community/events" element={<Events />} />
     </Routes>
   );
 };

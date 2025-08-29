@@ -43,14 +43,14 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full md:h-screen  h-[calc(100vh-80px)] overflow-hidden">
       {/* Background Slider */}
       {images.map((img, idx) => (
         <img
           key={idx}
           src={img}
           alt={`Slide ${idx}`}
-          className={`absolute inset-0 top-20 w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute inset-0 top-18 md:top-20 w-full h-full object-cover bg-cover bg-center transition-opacity duration-1000 ${
             idx === current ? "opacity-100" : "opacity-0"
           }`}
         />
