@@ -1,5 +1,5 @@
 import React from "react";
-import chairmanImg from "../assets/chairmanImg.jpg";
+import chairmanImg from "../assets/chairmanimg.jpg";
 import image from "../assets/images.png";
 import stuImage from "../assets/students.webp";
 import parentImg from "../assets/Parents.jpg";
