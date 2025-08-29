@@ -6,6 +6,9 @@ import Volunteer from "../Pages/Volunteer";
 import Community from "../Pages/Community";
 
 import Events from "../Pages/Events";
+import OurMission from "../Pages/OurMission";
+import TeamMembers from "../Pages/TeamMembers";
+import OurSchoolInfo from "../Pages/OurSchoolInfo";
 
 
 const Router = () => {
@@ -18,6 +21,9 @@ const Router = () => {
       <Route path="/membership/volunteer" element={<Volunteer />} />
       <Route path="/community/chat" element={<Community />} />
       <Route path="/community/events" element={<Events />} />
+      <Route path="/about/mission" element={<OurMission />} />
+      <Route path="/about/team" element={<TeamMembers />} />
+      <Route path="/about/school" element={<OurSchoolInfo />} />
     </Routes>
   );
 };
