@@ -21,7 +21,7 @@ const Footer = () => {
               <h3 className="mb-2 font-bold text-center">Stay in Touch</h3>
               <button
                 className="bg-gray-200 text-[#873a17] py-2 px-6 rounded-full 
-                hover:bg-[#c87047] hover:outline hover:outline-2 hover:outline-[#873a17] hover:outline-offset-2"
+                hover:bg-[#c87047] hover:outline hover:outline-[#873a17] hover:outline-offset-2"
               >
                 Subscribe Now
               </button>

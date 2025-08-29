@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import userImg from "../assets/user.svg";
-import logo_img from "../assets/logo_basisBooster.png";
+
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/BASIS_Logo.png";
@@ -165,7 +165,7 @@ const Navbar = ({ bgColor }) => {
           <div>
             <button
               className="bg-gray-200 font-semibold text-[#873a17] py-2 px-6 rounded-full 
-      hover:bg-[#c87047] hover:text-white hover:outline hover:outline-2 hover:outline-[#873a17] hover:outline-offset-2"
+      hover:bg-[#c87047] hover:text-white hover:outline hover:outline-[#873a17] hover:outline-offset-2"
             >
               Log In
             </button>
