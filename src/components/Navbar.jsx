@@ -13,6 +13,14 @@ const Navbar = ({ bgColor }) => {
 
   const menus = [
     { title: "Home", link: "/" }, // normal link
+    {
+      title: "About Us",
+      items: [
+        { name: "Our Mission", link: "/about/mission" },
+        { name: "Meet the Team", link: "/about/team" },
+        { name: "Our School Info", link: "/about/school" },
+      ],
+    },
 
     {
       title: "Membership",
@@ -34,14 +42,7 @@ const Navbar = ({ bgColor }) => {
       link: "/parent-form",
     },
 
-    {
-      title: "About Us",
-      items: [
-        { name: "Our Mission", link: "/about/mission" },
-        { name: "Meet the Team", link: "/about/team" },
-        { name: "Our School Info", link: "/about/school" },
-      ],
-    },
+    
   ];
 
   const location = useLocation();
