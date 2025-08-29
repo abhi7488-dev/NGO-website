@@ -86,7 +86,7 @@ const Navbar = ({ bgColor }) => {
                     <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#c87047] group-hover:left-0 group-hover:w-full transition-all duration-300"></span>
 
                     {/* Dropdown menu */}
-                    <div className="absolute left-0 text-[14px] font-semibold top-full hidden group-hover:block bg-white text-black shadow-lg rounded mt-0.5 min-w-[160px] z-50">
+                    <div className="absolute left-0 text-[14px] font-semibold top-full hidden group-hover:block bg-white text-black shadow-lg rounded min-w-[160px] z-50">
                       {menu.items.map((item, i) => (
                         <Link
                           key={i}
