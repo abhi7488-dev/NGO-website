@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
+import Home from "../Pages/Home";
 import Parent from "../Pages/Parent";
 import ParentForm from "../components/Parent/ParentForm";
 import Member from "../Pages/Member";
