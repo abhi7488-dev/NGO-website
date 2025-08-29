@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import MainSection from '../components/Parent/MainSection'
+import ParentForm from '../components/Parent/ParentForm'
 
 const Parent = () => {
   return (
-    <div>
+    <>
       
       <Navbar bgColor="#e9baa4"/>
-      <MainSection/>
-    </div>
+      <ParentForm/>
+    </>
   )
 }
 

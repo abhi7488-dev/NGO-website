@@ -4,6 +4,8 @@ import memberImg from "../assets/member.jpg";
 
 const MembershipForm = () => {
 
+    const [loaded, setLoaded] = useState(false);
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -33,14 +35,19 @@ const MembershipForm = () => {
   return (
     <div className="h-[calc(100vh-84px)] flex flex-col md:flex-row">
       {/* Left side text */}
-      <div className="flex-1 text-white flex justify-start items-start pl-20 ml-10 bg-cover bg-center" style={{ backgroundImage: `url(${memberImg})` }}>
-        {/* <h2 className="text-4xl md:text-5xl font-bold mb-6">Become a Member</h2>
-        <p className="text-lg leading-relaxed max-w-md">
-          Join our community and enjoy exclusive benefits, access to resources,
-          and opportunities to connect with others.  
-          <br />
-          Fill out the form to get started today!
-        </p> */}
+      <div className="hidden md:block flex-1 relative justify-center items-center md:pl-20 ml-10 bg-cover bg-center">
+          {!loaded && (
+        <div className="absolute w-[540px] h-[540px] inset-0 bg-gray-200 animate-pulse rounded" />
+      )}
+      <img
+        src={memberImg}
+        alt="Membership Illustration"
+        onLoad={() => setLoaded(true)}
+        className={`object-cover rounded transition-opacity duration-500 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
       </div>
 
       {/* Right side form */}

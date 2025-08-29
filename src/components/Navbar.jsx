@@ -29,8 +29,8 @@ const Navbar = ({ bgColor }) => {
     },
 
     {
-      title: "Parent Resources",
-      items: [{ name: "Parent Portal", link: "/parent" }],
+      title: "Parent Portal",
+      link: "/parent-form",
     },
 
     {
@@ -50,7 +50,7 @@ const Navbar = ({ bgColor }) => {
     <>
       {/* Navbar */}
       <nav
-        className={`w-full flex items-center justify-between px-6 md:px-10 h-[84px] z-50
+        className={`w-full flex items-center justify-between px-6 md:px-10 h-[70px] my-1 md:my-0 md:h-[84px] z-50
         ${
           isHome
             ? "fixed left-0 top-0 backdrop-blur-md bg-white text-black shadow-sm"
@@ -94,7 +94,7 @@ const Navbar = ({ bgColor }) => {
             ))}
           </ul>
 
-          <div className="relative group inline-block">
+          <div className="hidden md:inline-block relative group">
             <img
               src={userImg}
               alt=""
@@ -135,43 +135,49 @@ const Navbar = ({ bgColor }) => {
       </nav>
 
       {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white text-black flex flex-col items-center py-6 space-y-4 shadow-md md:hidden z-20">
-          {menus.map((menu, idx) => (
-            <div key={idx} className="w-full text-center">
-              {!menu.items ? (
-                <a
-                  href={menu.link}
-                  className="block py-2 text-lg font-semibold"
-                >
-                  {menu.title}
-                </a>
-              ) : (
-                <div className="flex flex-col space-y-2">
-                  <span className="font-semibold">{menu.title}</span>
-                  {menu.items.map((item, i) => (
-                    <a
-                      key={i}
-                      href="#"
-                      className="block text-gray-600 hover:text-[#c87047]"
-                    >
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-          <div>
-            <button
-              className="bg-gray-200 font-semibold text-[#873a17] py-2 px-6 rounded-full 
-      hover:bg-[#c87047] hover:text-white hover:outline hover:outline-[#873a17] hover:outline-offset-2"
-            >
-              Log In
-            </button>
+  {isOpen && (
+  <div className="absolute top-16 left-0 w-full h-screen bg-white text-black flex flex-col items-center py-6 space-y-4 shadow-md md:hidden z-20 animate-slide-down">
+    {menus.map((menu, idx) => (
+      <div key={idx} className="w-full text-center">
+        {!menu.items ? (
+          <Link
+            to={menu.link} // ✅ use "to" instead of "href"
+            className="block py-2 text-lg font-semibold hover:text-[#c87047] transition"
+            onClick={() => setIsOpen(false)}
+          >
+            {menu.title}
+          </Link>
+        ) : (
+          <div className="flex flex-col space-y-2">
+            <span className="font-semibold">{menu.title}</span>
+            {menu.items.map((item, i) => (
+              <Link
+                key={i}
+                to={item.link} // ✅ use item.link
+                className="block text-gray-600 hover:text-[#c87047] pl-4 transition"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name} {/* ✅ show item.name */}
+              </Link>
+            ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
+    ))}
+    <div>
+      <button
+        className="bg-gray-200 font-semibold text-[#873a17] py-2 px-6 rounded-full 
+        hover:bg-[#c87047] hover:text-white hover:outline hover:outline-[#873a17] 
+        hover:outline-offset-2 transition"
+        onClick={() => setIsOpen(false)}
+      >
+        Log In
+      </button>
+    </div>
+  </div>
+)}
+
+
     </>
   );
 };

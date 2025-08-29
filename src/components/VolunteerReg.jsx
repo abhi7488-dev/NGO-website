@@ -24,7 +24,7 @@ export default function VolunteerReg() {
   return (
     <div className="flex flex-col md:flex-row h-[calc(100vh-84px)] bg-gray-100">
       {/* Left Side Text */}
-      <div className="flex-1 flex flex-col justify-center items-start p-10 text-white pl-[100px]">
+      <div className="hidden md:flex-1 md:flex flex-col justify-center items-start p-10 text-white pl-[100px]">
   <img
     src={volunteerImg}
     alt="Volunteer"
