@@ -60,11 +60,11 @@ const FamilyInformationForm = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6">
+        <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-6">
           {/* Left Column - Parent/Faculty Form */}
           <div className="w-full lg:w-1/2">
             <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 h-full">
-              <form onSubmit={handleSubmit} className="space-y-0">
+              <div className="space-y-0">
                 {/* PARENT/FACULTY Section */}
                 <div className="p-6 border-b border-gray-100 transition-all duration-300 hover:shadow-md">
                   <div className="flex items-center mb-6">
@@ -240,25 +240,14 @@ const FamilyInformationForm = () => {
                     <span>Add Second Parent</span>
                   </label>
                 </div>
-
-                {/* Submit Button */}
-                <div className="p-6 bg-gray-50">
-                  <button
-                    type="submit"
-                    className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm transition duration-200 ml-auto"
-                  >
-                    Next Step
-                    <i className="fas fa-arrow-right ml-2"></i>
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
 
           {/* Right Column - Second Parent Form (Visible when toggled) */}
           <div className="w-full lg:w-1/2">
             {showSecondParent && (
-              <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 h-full">
+              <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 h-full mb-6">
                 <div className="p-6 border-b border-gray-100 transition-all duration-300 hover:shadow-md">
                   <div className="flex items-center mb-6">
                     <div className="bg-blue-100 p-2 rounded-lg">
@@ -446,8 +435,19 @@ const FamilyInformationForm = () => {
                 </div>
               </div>
             )}
+            
+            {/* Submit Button - Always positioned at the bottom right */}
+            <div className="flex justify-end mt-6">
+              <button
+                type="submit"
+                className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm transition duration-200"
+              >
+                Next Step
+                <i className="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
