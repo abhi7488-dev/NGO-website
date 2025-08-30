@@ -9,6 +9,7 @@ import Events from "../Pages/Events";
 import OurMission from "../Pages/OurMission";
 import TeamMembers from "../Pages/TeamMembers";
 import OurSchoolInfo from "../Pages/OurSchoolInfo";
+import CarpoolFeature from "../Pages/CarpoolFeature";
 
 
 const Router = () => {
@@ -24,6 +25,7 @@ const Router = () => {
       <Route path="/about/mission" element={<OurMission />} />
       <Route path="/about/team" element={<TeamMembers />} />
       <Route path="/about/school" element={<OurSchoolInfo />} />
+      <Route path="/carpool" element={<CarpoolFeature />} />
     </Routes>
   );
 };

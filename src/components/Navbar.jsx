@@ -41,6 +41,10 @@ const Navbar = ({ bgColor }) => {
       title: "Parent Portal",
       link: "/parent-form",
     },
+     {
+      title: "Carpool",
+      link: "/carpool",
+    },
 
     
   ];
