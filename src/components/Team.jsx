@@ -1,5 +1,10 @@
 import React from "react";
 import Image from "../assets/team_img.png";
+import image1 from "../assets/team1.jpg";
+import image2 from "../assets/team2.jpg";
+import image3 from "../assets/team3.jpeg";
+import image4 from "../assets/team4.jpg";
+import image5 from "../assets/team5.jpg";
 
 // Team data (easy to edit)
 const teamMembers = [
@@ -8,42 +13,42 @@ const teamMembers = [
     role: "President",
     description:
       "Provides leadership and oversees the overall vision and direction of the NGO.",
-    image: "https://via.placeholder.com/150",
+    image: image1,
   },
   {
     name: "Jane Smith",
     role: "Vice President",
     description:
       "Assists the president, supervises projects, and ensures smooth daily operations.",
-    image: "https://via.placeholder.com/150",
+    image: image2,
   },
   {
     name: "Michael Brown",
     role: "Treasurer",
     description:
       "Manages financial planning, budgeting, and proper utilization of funds.",
-    image: "https://via.placeholder.com/150",
+    image: image3,
   },
   {
     name: "Emily Johnson",
     role: "Communications Director",
     description:
       "Handles public relations, outreach, and communication with the community.",
-    image: "https://via.placeholder.com/150",
+    image: image4,
   },
   {
     name: "David Wilson",
     role: "Secretary",
     description:
       "Maintains records, organizes meetings, and ensures proper documentation.",
-    image: "https://via.placeholder.com/150",
+    image: image5,
   },
 ];
 
 const Team = () => {
   return (
     <section className="bg-gray-100 h-[calc(100vh-84px)] py-16 px-6 md:px-20">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-10">
           Meet Our Team
@@ -57,9 +62,9 @@ const Team = () => {
               className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition duration-300 flex flex-col items-center"
             >
               <img
-                src={Image}
+                src={member.image}
                 alt={member.name}
-                className="w-24 h-24 mb-4 object-cover"
+                className="w-24 h-24 rounded-full mb-4 object-cover"
               />
               <h3 className="text-lg font-semibold text-gray-800">
                 {member.name}

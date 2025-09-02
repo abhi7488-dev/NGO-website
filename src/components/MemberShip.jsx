@@ -64,7 +64,7 @@ const MembershipForm = () => {
               type="text"
               name="name"
               placeholder="Enter your name"
-              className="w-full px-4 py-1 border rounded-lg focus:ring-2 focus:ring-[#0C2C66] focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#1a1c1f] focus:outline-none"
               required
               value={formData.name}
               onChange={handleChange}
@@ -78,7 +78,7 @@ const MembershipForm = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-1 border rounded-lg focus:ring-2 focus:ring-[#0C2C66] focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#1a1c1f] focus:outline-none"
               required
               value={formData.email}
               onChange={handleChange}
@@ -93,7 +93,7 @@ const MembershipForm = () => {
               name="phone"
               placeholder="Enter your phone number"
               
-              className="w-full px-4 py-1 border rounded-lg focus:ring-2 focus:ring-[#0C2C66] focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#1a1c1f] focus:outline-none"
               required
               value={formData.phone}
               onChange={handleChange}
@@ -107,7 +107,7 @@ const MembershipForm = () => {
               type="password"
                 name="password"
               placeholder="Create a password"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0C2C66] focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#15181c] focus:outline-none"
               required
               value={formData.password}
               onChange={handleChange}
@@ -120,7 +120,7 @@ const MembershipForm = () => {
               type="password"
               name="confirmPassword"
               placeholder="Retype your password"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0C2C66] focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#1a1c1f] focus:outline-none"
               required
               value={formData.confirmPassword}
               onChange={handleChange}

@@ -50,7 +50,7 @@ export default function VolunteerReg() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full border rounded-lg px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="w-full border border-gray-300 rounded-md px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
               />
             </div>
 
@@ -63,7 +63,7 @@ export default function VolunteerReg() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border rounded-lg px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="w-full border border-gray-300 rounded-md px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
               />
             </div>
 
@@ -76,7 +76,7 @@ export default function VolunteerReg() {
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full border rounded-lg px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="w-full border border-gray-300 rounded-md px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
               />
             </div>
 
@@ -90,7 +90,7 @@ export default function VolunteerReg() {
                 required
                 value={formData.availability}
                 onChange={handleChange}
-                className="w-full border text-[14px] font-normal rounded-lg px-4 py-1.5 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="w-full border border-gray-300 text-[14px] font-normal rounded-md px-4 py-1.5 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
               >
                 <option value="">Select...</option>
                 <option value="Weekdays">Weekdays</option>
@@ -111,7 +111,7 @@ export default function VolunteerReg() {
                 placeholder="e.g., Teaching, Event Support"
                 value={formData.interests}
                 onChange={handleChange}
-                className="w-full text-[14px] border rounded-lg px-4 py-1.5 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="w-full text-[14px] border border-gray-300 rounded-md px-4 py-1.5 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
               />
             </div>
 
@@ -125,14 +125,14 @@ export default function VolunteerReg() {
                 rows="3"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full border rounded-lg px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="w-full border border-gray-300 rounded-md px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
               ></textarea>
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-[#0C2C66] text-white py-2 rounded-lg font-semibold hover:bg-[#123b88] transition"
+              className="w-full bg-[#0C2C66] text-white py-2 rounded-md font-semibold hover:bg-[#123b88] transition"
             >
               Register Now
             </button>
