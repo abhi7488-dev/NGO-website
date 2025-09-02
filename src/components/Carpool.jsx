@@ -40,9 +40,7 @@ const StudentGamingPlatform = () => {
 
   // Available games for selection
   const popularGames = [
-    'Fortnite', 'Minecraft', 'League of Legends', 'Valorant', 
-    'Call of Duty: Warzone', 'Apex Legends', 'Rocket League', 
-    'Among Us', 'Genshin Impact', 'Dota 2'
+    'Basketball','Football','Cricket','Tennis','Badminton',
   ];
 
   // Sample location data for demonstration
