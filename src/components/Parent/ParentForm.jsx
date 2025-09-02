@@ -1,36 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const FamilyInformationForm = () => {
   const [formData, setFormData] = useState({
-    connection: '',
-    email: '',
-    title: 'Mr.',
-    firstName: '',
-    lastName: '',
-    address: '',
-    city: '',
-    state: 'Arizona',
-    zip: '',
-    secondEmail: '',
-    secondTitle: 'Mr.',
-    secondFirstName: '',
-    secondLastName: '',
-    secondAddress: '',
-    secondCity: '',
-    secondState: 'Arizona',
-    secondZip: '',
-    secondHomePhone: '',
-    secondWorkPhone: '',
-    secondMobilePhone: ''
+    connection: "",
+    email: "",
+    title: "Mr.",
+    firstName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    state: "Arizona",
+    zip: "",
+    secondEmail: "",
+    secondTitle: "Mr.",
+    secondFirstName: "",
+    secondLastName: "",
+    secondAddress: "",
+    secondCity: "",
+    secondState: "Arizona",
+    secondZip: "",
+    secondHomePhone: "",
+    secondWorkPhone: "",
+    secondMobilePhone: "",
   });
 
   const [showSecondParent, setShowSecondParent] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -41,7 +41,7 @@ const FamilyInformationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   return (
@@ -53,14 +53,23 @@ const FamilyInformationForm = () => {
             <div className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white font-semibold mr-3">
               1
             </div>
-            <h1 className="text-2xl font-bold text-gray-800">Set Up Your Family Information</h1>
+            <h1 className="text-2xl font-bold text-gray-800">
+              Set Up Your Family Information
+            </h1>
           </div>
           <p className="text-gray-600 ml-11">
-            Begin by entering your parent and student details. You'll have the opportunity to enroll in the BASIS Phoenix Boosters Club as soon as this action is complete. Interested in carpooling? Simply mark your preference below and open the car door to connecting with other nearby families.
+            Begin by entering your parent and student details. You'll have the
+            opportunity to enroll in the BASIS Phoenix Boosters Club as soon as
+            this action is complete. Interested in carpooling? Simply mark your
+            preference below and open the car door to connecting with other
+            nearby families.
           </p>
         </div>
-
-        <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-6">
+    
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col lg:flex-row gap-6"
+        >
           {/* Left Column - Parent/Faculty Form */}
           <div className="w-full lg:w-1/2">
             <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 h-full">
@@ -71,13 +80,16 @@ const FamilyInformationForm = () => {
                     <div className="bg-blue-100 p-2 rounded-lg">
                       <i className="fas fa-user-circle text-blue-600 text-xl"></i>
                     </div>
-                    <h2 className="text-xl font-semibold text-gray-800 ml-3">PARENT/FACULTY INFORMATION</h2>
+                    <h2 className="text-xl font-semibold text-gray-800 ml-3">
+                      PARENT/FACULTY INFORMATION
+                    </h2>
                   </div>
 
                   {/* Connection */}
                   <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      How are you connected to our school?<span className="text-red-500">*</span>
+                      How are you connected to our school?
+                      <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
@@ -99,7 +111,9 @@ const FamilyInformationForm = () => {
 
                   {/* Email */}
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">E-mail Address</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      E-mail Address
+                    </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <i className="fas fa-envelope text-gray-400"></i>
@@ -118,7 +132,9 @@ const FamilyInformationForm = () => {
                   {/* Name */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Title
+                      </label>
                       <div className="relative">
                         <select
                           name="title"
@@ -137,7 +153,9 @@ const FamilyInformationForm = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        First Name
+                      </label>
                       <input
                         type="text"
                         name="firstName"
@@ -148,7 +166,9 @@ const FamilyInformationForm = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Last Name
+                      </label>
                       <input
                         type="text"
                         name="lastName"
@@ -162,7 +182,9 @@ const FamilyInformationForm = () => {
 
                   {/* Address */}
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Address</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Address
+                    </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <i className="fas fa-home text-gray-400"></i>
@@ -181,7 +203,9 @@ const FamilyInformationForm = () => {
                   {/* City, State, Zip */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        City
+                      </label>
                       <input
                         type="text"
                         name="city"
@@ -192,7 +216,9 @@ const FamilyInformationForm = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">State</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        State
+                      </label>
                       <div className="relative">
                         <select
                           name="state"
@@ -210,7 +236,9 @@ const FamilyInformationForm = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Zip Code</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Zip Code
+                      </label>
                       <input
                         type="text"
                         name="zip"
@@ -232,14 +260,35 @@ const FamilyInformationForm = () => {
                         className="sr-only"
                         id="second-parent-toggle"
                         checked={showSecondParent}
-                        onChange={(e) => handleSecondParentToggle(e.target.checked)}
+                        onChange={(e) =>
+                          handleSecondParentToggle(e.target.checked)
+                        }
                       />
-                      <div className={`block w-10 h-6 rounded-full transition-colors ${showSecondParent ? 'bg-blue-600' : 'bg-gray-300'}`}></div>
-                      <div className={`dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform ${showSecondParent ? 'transform translate-x-4' : ''}`}></div>
+                      <div
+                        className={`block w-10 h-6 rounded-full transition-colors ${
+                          showSecondParent ? "bg-blue-600" : "bg-gray-300"
+                        }`}
+                      ></div>
+                      <div
+                        className={`dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform ${
+                          showSecondParent ? "transform translate-x-4" : ""
+                        }`}
+                      ></div>
                     </div>
                     <span>Add Second Parent</span>
                   </label>
                 </div>
+                {!showSecondParent && (
+                  <div className="flex justify-end mt-2">
+                    <button
+                      type="submit"
+                      className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm transition duration-200"
+                    >
+                      Next Step
+                      <i className="fas fa-arrow-right ml-2"></i>
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -253,12 +302,16 @@ const FamilyInformationForm = () => {
                     <div className="bg-blue-100 p-2 rounded-lg">
                       <i className="fas fa-users text-blue-600 text-xl"></i>
                     </div>
-                    <h2 className="text-xl font-semibold text-gray-800 ml-3">SECOND PARENT INFORMATION</h2>
+                    <h2 className="text-xl font-semibold text-gray-800 ml-3">
+                      SECOND PARENT INFORMATION
+                    </h2>
                   </div>
 
                   {/* Email */}
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">E-mail Address</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      E-mail Address
+                    </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <i className="fas fa-envelope text-gray-400"></i>
@@ -277,7 +330,9 @@ const FamilyInformationForm = () => {
                   {/* Name */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Title
+                      </label>
                       <div className="relative">
                         <select
                           name="secondTitle"
@@ -296,7 +351,9 @@ const FamilyInformationForm = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        First Name
+                      </label>
                       <input
                         type="text"
                         name="secondFirstName"
@@ -307,7 +364,9 @@ const FamilyInformationForm = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Last Name
+                      </label>
                       <input
                         type="text"
                         name="secondLastName"
@@ -321,7 +380,9 @@ const FamilyInformationForm = () => {
 
                   {/* Address */}
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Address</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Address
+                    </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <i className="fas fa-home text-gray-400"></i>
@@ -340,7 +401,9 @@ const FamilyInformationForm = () => {
                   {/* City, State, Zip */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        City
+                      </label>
                       <input
                         type="text"
                         name="secondCity"
@@ -351,7 +414,9 @@ const FamilyInformationForm = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">State</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        State
+                      </label>
                       <div className="relative">
                         <select
                           name="secondState"
@@ -369,7 +434,9 @@ const FamilyInformationForm = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Zip Code</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Zip Code
+                      </label>
                       <input
                         type="text"
                         name="secondZip"
@@ -384,7 +451,9 @@ const FamilyInformationForm = () => {
                   {/* Phones */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Home Phone</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Home Phone
+                      </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                           <i className="fas fa-phone text-gray-400"></i>
@@ -400,7 +469,9 @@ const FamilyInformationForm = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Work Phone</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Work Phone
+                      </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                           <i className="fas fa-briefcase text-gray-400"></i>
@@ -416,7 +487,9 @@ const FamilyInformationForm = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Mobile Phone</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Mobile Phone
+                      </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                           <i className="fas fa-mobile-alt text-gray-400"></i>
@@ -435,17 +508,19 @@ const FamilyInformationForm = () => {
                 </div>
               </div>
             )}
-            
+
             {/* Submit Button - Always positioned at the bottom right */}
-            <div className="flex justify-end mt-6">
-              <button
-                type="submit"
-                className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm transition duration-200"
-              >
-                Next Step
-                <i className="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
+            {showSecondParent && (
+              <div className="flex justify-end mt-2">
+                <button
+                  type="submit"
+                  className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm transition duration-200"
+                >
+                  Next Step
+                  <i className="fas fa-arrow-right ml-2"></i>
+                </button>
+              </div>
+            )}
           </div>
         </form>
       </div>
