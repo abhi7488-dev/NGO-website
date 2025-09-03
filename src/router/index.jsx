@@ -29,7 +29,7 @@ const Router = () => {
       <Route path="/about/school" element={<OurSchoolInfo />} />
       <Route path="/carpool" element={<CarpoolFeature />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/parent/directory" element={<Directory />} />
+      {/* <Route path="/parent/directory" element={<Directory />} /> */}
     </Routes>
   );
 };
