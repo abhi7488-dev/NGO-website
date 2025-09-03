@@ -1,92 +1,70 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Logo from "../assets/BASIS_Logo.png";
-import BgImg1 from "../assets/image1.webp";
-import BgImg2 from "../assets/image2.webp";
-import BgImg3 from "../assets/image.webp";
-import userImg from "../assets/user.svg";
-import logo_img from "../assets/logo_basisBooster.png";
-import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
-import { Menu, X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "./Navbar";
 
+// 👇 Replace with your assets
+// import BgImg1 from "../assets/image1.webp";
+// import BgImg2 from "../assets/image2.webp";
+import BgImg3 from "../assets/image.webp";
+
 export default function HeroSection() {
-  const [openMenu, setOpenMenu] = useState(null);
-   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = (idx) => {
-    setOpenMenu(openMenu === idx ? null : idx);
-  };
-
-
-
-
-  // 👇 Background images
-  const images = [BgImg1, BgImg2, BgImg3];
-
+  const images = [BgImg3];
   const [current, setCurrent] = useState(0);
 
   // Auto change every 5s
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     nextSlide();
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % images.length);
-  };
+  // const nextSlide = () => {
+  //   setCurrent((prev) => (prev + 1) % images.length);
+  // };
 
-  const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + images.length) % images.length);
-  };
+  // const prevSlide = () => {
+  //   setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  // };
 
   return (
-    <div className="relative w-full md:h-screen  h-[calc(100vh-80px)] overflow-hidden">
-      {/* Background Slider */}
-      {images.map((img, idx) => (
-        <img
-          key={idx}
-          src={img}
-          alt={`Slide ${idx}`}
-          className={`absolute inset-0 top-18 md:top-20 w-full h-full object-cover bg-cover bg-center transition-opacity duration-1000 ${
-            idx === current ? "opacity-100" : "opacity-0"
-          }`}
-        />
-      ))}
+<div className="relative w-full h-[calc(100vh-50px)] rounded-b-3xl overflow-hidden">
+  {/* Background Slider */}
+  {images.map((img, idx) => (
+    <div
+      key={idx}
+      className={`absolute inset-x-0 mt-20 w-full h-[calc(100vh-80px)] transition-opacity duration-1000 ${
+        idx === current ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      {/* Background Image */}
+      <img
+        src={img}
+        alt={`Slide ${idx}`}
+        className="w-full h-full object-cover object-top"
+      />
 
-      {/* Dark overlay */}
-      <div className="absolute"></div>
-
-    <Navbar />
-
-      {/* Left/Right Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-5 top-1/2 -translate-y-1/2 bg-black/40 p-3 rounded-full text-white hover:bg-black/70 z-10"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-5 top-1/2 -translate-y-1/2 bg-black/40 p-3 rounded-full text-white hover:bg-black/70 z-10"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-
-      {/* Dots Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-        {images.map((_, idx) => (
-          <span
-            key={idx}
-            onClick={() => setCurrent(idx)}
-            className={`h-3 w-3 rounded-full cursor-pointer ${
-              idx === current ? "bg-white" : "bg-gray-400"
-            }`}
-          ></span>
-        ))}
-      </div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
     </div>
+  ))}
+
+  {/* Navbar */}
+  <Navbar />
+
+  {/* Hero Content */}
+  <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 z-10 pt-[220px]">
+    <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+      Together for a Brighter Future
+    </h1>
+    <p className="max-w-2xl mb-6 text-lg md:text-xl drop-shadow-md">
+      Empowering students, supporting families, and building a stronger
+      community through education, compassion, and opportunity.
+    </p>
+  </div>
+</div>
+
+
+
   );
 }

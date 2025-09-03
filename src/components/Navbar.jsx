@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import userImg from "../assets/user.svg";
 import { useEffect } from "react";
 
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/BASIS_Logo.png";
 import { useLocation } from "react-router-dom";
+import userImg from "../assets/team3.jpeg";
 
 const Navbar = ({ bgColor }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,12 +39,13 @@ const Navbar = ({ bgColor }) => {
 
     {
       title: "Parent Portal",
-      link: "/parent-form",
+      items: [
+        { name: "Directory", link: "/parent/directory" },
+        { name: "Parent Form", link: "/parent-form" },
+        { name: "Carpool", link: "/carpool" },
+      ],
     },
-     {
-      title: "Carpool",
-      link: "/carpool",
-    },
+   
 
     
   ];
@@ -112,21 +113,21 @@ const Navbar = ({ bgColor }) => {
             <img
               src={userImg}
               alt=""
-              className={`h-11 w-11 rounded-full ${isHome ? "bg-white" : ""}`}
+              className={`h-11 w-11 rounded-full object-cover transition-transform duration-300 hover:scale-110 object-center ${isHome ? "bg-white" : ""}`}
             />
             <div className="absolute right-1 text-[14px] font-semibold top-full hidden group-hover:block bg-white text-black shadow-lg rounded mt-0 min-w-[160px] z-50">
-              <a href="#" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
+              <Link to="/profile" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
                 Profile
-              </a>
-              <a href="#" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
+              </Link>
+              <Link to="/dashboards" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
                 Dashboards
-              </a>
-              <a href="#" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
+              </Link>
+              <Link to="/orders" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
                 Orders
-              </a>
-              <a href="#" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
+              </Link>
+              <Link to="#" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
                 Log Out
-              </a>
+              </Link>
             </div>
           </div>
 

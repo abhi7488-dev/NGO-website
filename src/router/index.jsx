@@ -10,6 +10,8 @@ import OurMission from "../Pages/OurMission";
 import TeamMembers from "../Pages/TeamMembers";
 import OurSchoolInfo from "../Pages/OurSchoolInfo";
 import CarpoolFeature from "../Pages/CarpoolFeature";
+import Profile from "../Pages/Profile";
+import Directory from "../components/Parent/Directory";
 
 
 const Router = () => {
@@ -26,6 +28,8 @@ const Router = () => {
       <Route path="/about/team" element={<TeamMembers />} />
       <Route path="/about/school" element={<OurSchoolInfo />} />
       <Route path="/carpool" element={<CarpoolFeature />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/parent/directory" element={<Directory />} />
     </Routes>
   );
 };

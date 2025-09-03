@@ -105,7 +105,7 @@ const DirectorSection = () => {
   return (
    <main className="pt-[84px]">
      <div className="max-w-[1180px] mx-auto">
-         <section className="py-16 mb-12">
+         <section className="mb-12">
       <div className="max-w-7xl mx-auto px-4 text-center">
         {/* Heading */}
         <h2 className="text-[25px] md:text-4xl font-bold text-[#c87047]">
