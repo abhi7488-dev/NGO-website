@@ -1,93 +1,199 @@
 import React, { useState } from "react";
 
 const Directory = () => {
-  const [search, setSearch] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // Example Data (replace with your data source)
   const data = [
     {
-      parent1: "Agarwal, Santosh",
-      parent2: "Agarwal, Sunita",
-      students: ["Aarav Agarwal (8th Grade)"],
+      parent1: {
+        name: "Santosh Agarwal",
+        email: "santosh@email.com",
+        phone: "555-123-4567",
+        address: "123 Main St, Phoenix, AZ",
+      },
+      parent2: {
+        name: "Sunita Agarwal",
+        email: "sunita@email.com",
+        phone: "555-987-6543",
+        address: "123 Main St, Phoenix, AZ",
+      },
+      students: [{ name: "Aarav Agarwal", grade: "8th Grade" }],
     },
     {
-      parent1: "Akhre, Rachit",
-      parent2: "",
-      students: ["Sanchi Akhre (9th Grade)"],
+      parent1: {
+        name: "Charles Aldarondo",
+        email: "charles@email.com",
+        phone: "555-222-3333",
+        address: "45 Palm St, Phoenix, AZ",
+      },
+      parent2: {
+        name: "Moriah Aldarondo",
+        email: "moriah@email.com",
+        phone: "555-444-5555",
+        address: "45 Palm St, Phoenix, AZ",
+      },
+      students: [{ name: "Jack Aldarondo", grade: "11th Grade" }],
     },
     {
-      parent1: "Aldarondo, Charles",
-      parent2: "Aldarondo, Moriah",
-      students: ["Jack Aldarondo (11th Grade)"],
+      parent1: {
+        name: "John Doe",
+        email: "john@email.com",
+        phone: "555-111-2222",
+        address: "678 Elm St, Phoenix, AZ",
+      },
+      parent2: {
+        name: "Jane Doe",
+        email: "jane@email.com",
+        phone: "555-333-4444",
+        address: "678 Elm St, Phoenix, AZ",
+      },
+      students: [{ name: "Emily Doe", grade: "9th Grade" }],
     },
     {
-      parent1: "Armstead, Melissa",
-      parent2: "Armstead, Matt",
-      students: ["Asher Armstead (9th Grade)", "Jenna Allen (12th Grade)"],
+      parent1: {
+        name: "Alice Smith",
+        email: "alice@email.com",
+        phone: "555-555-5555",
+        address: "123 Oak St, Phoenix, AZ",
+      },
+      parent2: {
+        name: "Bob Smith",
+        email: "bob@email.com",
+        phone: "555-666-6666",
+        address: "123 Oak St, Phoenix, AZ",
+      },
+      students: [{ name: "Charlie Smith", grade: "10th Grade" }],
     },
   ];
 
-  // Filter Logic
+  // Filter search
   const filteredData = data.filter((entry) => {
-    const searchLower = search.toLowerCase();
+    const searchLower = searchTerm.toLowerCase();
     return (
-      entry.parent1.toLowerCase().includes(searchLower) ||
-      entry.parent2.toLowerCase().includes(searchLower) ||
-      entry.students.some((s) => s.toLowerCase().includes(searchLower))
+      entry.parent1.name.toLowerCase().includes(searchLower) ||
+      (entry.parent2 &&
+        entry.parent2.name.toLowerCase().includes(searchLower)) ||
+      entry.students.some((student) =>
+        student.name.toLowerCase().includes(searchLower)
+      )
     );
   });
 
   return (
-    <div className="p-6">
-      {/* Search Input */}
-      <div className="mb-4 flex justify-between items-center">
-        <h2 className="text-2xl font-bold">Parent–Student Directory</h2>
-        <input
-          type="text"
-          placeholder="Search by name or grade..."
-          className="border border-gray-300 rounded-lg px-4 py-2 w-80 focus:ring-2 focus:ring-blue-500"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+    <div className="min-h-screen bg-gray-50 p-6">
+      <div className="max-w-6xl mx-auto">
+        {/* Header and Search */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
+          <h1 className="text-3xl font-bold text-gray-800 mb-4 md:mb-0">
+            Parent-Student Directory
+          </h1>
+          <input
+            type="text"
+            placeholder="Search by name..."
+            className="pl-3 pr-4 py-2 w-full md:w-64 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
 
-      {/* Table */}
-      <div className="overflow-x-auto bg-white shadow-md rounded-lg">
-        <table className="min-w-full text-sm text-left">
-          <thead className="bg-gray-100 text-gray-700 uppercase text-xs">
-            <tr>
-              <th className="px-6 py-3">Parent 1</th>
-              <th className="px-6 py-3">Parent 2</th>
-              <th className="px-6 py-3">Students</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredData.length > 0 ? (
-              filteredData.map((entry, idx) => (
-                <tr
-                  key={idx}
-                  className="border-b hover:bg-gray-50 transition-colors"
-                >
-                  <td className="px-6 py-4 font-medium">{entry.parent1}</td>
-                  <td className="px-6 py-4">{entry.parent2 || "-"}</td>
-                  <td className="px-6 py-4">
-                    <ul className="list-disc pl-4">
-                      {entry.students.map((s, i) => (
-                        <li key={i}>{s}</li>
-                      ))}
-                    </ul>
-                  </td>
+        {/* Table */}
+        {filteredData.length === 0 ? (
+          <div className="bg-white rounded-xl shadow-sm p-8 text-center">
+            <p className="text-gray-500">No matching families found.</p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">
+                    Family Address
+                  </th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">
+                    Parent 1
+                  </th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">
+                    Parent 2
+                  </th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">
+                    Students
+                  </th>
+                  <th className="px-4 py-3 text-right text-sm font-semibold text-gray-600">
+                    Actions
+                  </th>
                 </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan="3" className="text-center py-6 text-gray-500">
-                  No results found
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {filteredData.map((entry, idx) => (
+                  <tr key={idx} className="hover:bg-gray-50">
+                    {/* Address */}
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {entry.parent1.address}
+                    </td>
+
+                    {/* Parent 1 */}
+                    <td className="px-4 py-3 text-sm">
+                      <div className="font-medium text-gray-800">
+                        {entry.parent1.name}
+                      </div>
+                      <div className="text-gray-500 text-xs">
+                        {entry.parent1.email}
+                      </div>
+                      <div className="text-gray-500 text-xs">
+                        {entry.parent1.phone}
+                      </div>
+                    </td>
+                    
+                    {/* Parent 2 */}
+                    <td className="px-4 py-3 text-sm">
+                      {entry.parent2 ? (
+                        <>
+                          <div className="font-medium text-gray-800">
+                            {entry.parent2.name}
+                          </div>
+                          <div className="text-gray-500 text-xs">
+                            {entry.parent2.email}
+                          </div>
+                          <div className="text-gray-500 text-xs">
+                            {entry.parent2.phone}
+                          </div>
+                        </>
+                      ) : (
+                        <span className="text-gray-400 italic">N/A</span>
+                      )}
+                    </td>
+
+                    {/* Students - Always visible */}
+                    <td className="px-4 py-3 text-sm">
+                      <div className="space-y-1">
+                        {entry.students.map((student, sIdx) => (
+                          <div key={sIdx}>
+                            <span className="font-medium text-gray-800 block">
+                              {student.name}
+                            </span>
+                            <span className="text-gray-500 text-xs">
+                              {student.grade}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </td>
+
+                    {/* Actions */}
+                    <td className="px-4 py-3 text-right text-sm space-x-3">
+                      <button className="text-gray-600 hover:text-gray-800">
+                        Message
+                      </button>
+                      <button className="text-blue-600 hover:text-blue-800">
+                        Call
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </div>
   );
