@@ -65,7 +65,7 @@ const Navbar = ({ bgColor }) => {
     <>
       {/* Navbar */}
       <nav
-        className={`w-full flex items-center justify-between px-6 md:px-10 h-[70px] md:h-[84px] z-50
+        className={`w-full flex items-center justify-between px-6 md:px-10 h-[70px] md:h-[84px] z-[22000]
         ${
           isHome
             ? "fixed left-0 top-0 backdrop-blur-md bg-white text-black shadow-sm"

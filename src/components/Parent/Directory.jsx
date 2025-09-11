@@ -14,7 +14,7 @@ const Directory = () => {
       parent2: {
         name: "Sunita Agarwal",
         email: "sunita@email.com",
-        phone: "555-987-6543",
+        phone: "324-555-6789",
         address: "123 Main St, Phoenix, AZ",
       },
       students: [{ name: "Aarav Agarwal", grade: "8th Grade" }],
@@ -23,7 +23,7 @@ const Directory = () => {
       parent1: {
         name: "Charles Aldarondo",
         email: "charles@email.com",
-        phone: "555-222-3333",
+        phone: "324-456-7890",
         address: "45 Palm St, Phoenix, AZ",
       },
       parent2: {
@@ -44,7 +44,7 @@ const Directory = () => {
       parent2: {
         name: "Jane Doe",
         email: "jane@email.com",
-        phone: "555-333-4444",
+        phone: "865-183-2450",
         address: "678 Elm St, Phoenix, AZ",
       },
       students: [{ name: "Emily Doe", grade: "9th Grade" }],
@@ -53,7 +53,7 @@ const Directory = () => {
       parent1: {
         name: "Alice Smith",
         email: "alice@email.com",
-        phone: "555-555-5555",
+        phone: "727-303-3045",
         address: "123 Oak St, Phoenix, AZ",
       },
       parent2: {
