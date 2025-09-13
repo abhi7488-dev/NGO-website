@@ -90,7 +90,7 @@ const Directory = () => {
           <input
             type="text"
             placeholder="Search by name..."
-            className="pl-3 pr-4 py-2 w-full md:w-64 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+            className="pl-3 pr-4 py-2 w-full md:w-64 rounded-lg border border-gray-300 focus:ring-1 transition"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

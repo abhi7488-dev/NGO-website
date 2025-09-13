@@ -41,7 +41,6 @@ const Footer = () => {
                   Meet the Team
                 </a>
               </li>
-              
             </ul>
           </div>
 

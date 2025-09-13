@@ -38,7 +38,7 @@ const StudentGamingPlatform = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [locationError, setLocationError] = useState("");
   const [isCalling, setIsCalling] = useState(false);
-  const [showPreferences, setShowPreferences] = useState(true);
+  const [showPreferences, setShowPreferences] = useState(false);
   const chatContainerRef = useRef(null);
 
   // Preferences state
@@ -407,7 +407,7 @@ const StudentGamingPlatform = () => {
                               gender: e.target.value,
                             })
                           }
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent text-sm"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:border-transparent text-sm"
                         >
                           <option value="any">Any Gender</option>
                           <option value="male">Male</option>
@@ -427,7 +427,7 @@ const StudentGamingPlatform = () => {
                               grade: e.target.value,
                             })
                           }
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent text-sm"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:border-transparent text-sm"
                         >
                           {grades.map((grade) => (
                             <option key={grade} value={grade}>

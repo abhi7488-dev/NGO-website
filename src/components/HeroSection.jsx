@@ -10,23 +10,7 @@ import BgImg3 from "../assets/image.webp";
 export default function HeroSection() {
   const images = [BgImg3];
   const [current, setCurrent] = useState(0);
-
-  // Auto change every 5s
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     nextSlide();
-  //   }, 5000);
-  //   return () => clearInterval(interval);
-  // }, []);
-
-  // const nextSlide = () => {
-  //   setCurrent((prev) => (prev + 1) % images.length);
-  // };
-
-  // const prevSlide = () => {
-  //   setCurrent((prev) => (prev - 1 + images.length) % images.length);
-  // };
-
+  
   return (
 <div className="relative w-full h-[calc(100vh-50px)] rounded-b-3xl overflow-hidden">
   {/* Background Slider */}
@@ -49,10 +33,10 @@ export default function HeroSection() {
     </div>
   ))}
 
-  {/* Navbar */}
+  {/* Navbar */}                       
   <Navbar />
 
-  {/* Hero Content */}
+  {/* Hero Content */}                
   <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 z-10 pt-[220px]">
     <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
       Together for a Brighter Future
@@ -63,8 +47,5 @@ export default function HeroSection() {
     </p>
   </div>
 </div>
-
-
-
   );
 }
