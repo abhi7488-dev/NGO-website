@@ -2,7 +2,7 @@ import React from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction"; // needed for clicks
+import interactionPlugin from "@fullcalendar/interaction";
 
 const EventsCalendar = () => {
   const events = [
@@ -13,7 +13,7 @@ const EventsCalendar = () => {
 
   const handleEventClick = (info) => {
     alert(`Event: ${info.event.title}\nDate: ${info.event.start.toLocaleString()}`);
-    // 👉 Instead of alert, you can open a modal here
+   
   };
 
   return (
@@ -29,7 +29,7 @@ const EventsCalendar = () => {
         }}
         events={events}
         height="650px"
-        eventClick={handleEventClick} // ✅ handle click
+        eventClick={handleEventClick}
       />
     </div>
   );
