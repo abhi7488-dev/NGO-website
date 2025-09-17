@@ -38,7 +38,7 @@ const AddFamilyModal = ({ isOpen, onClose, onSave }) => {
   return (
     // Main modal overlay - THIS LINE IS UPDATED
     <div 
-      className="fixed inset-0 bg-gray-500 bg-opacity-50 backdrop-blur-sm z-40 flex justify-center items-center"
+      className="fixed inset-0 bg-opacity-50 backdrop-blur-xs z-40 flex justify-center items-center"
       onClick={onClose}
     >
       {/* Modal content */}
