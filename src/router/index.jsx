@@ -12,6 +12,7 @@ import OurSchoolInfo from "../Pages/OurSchoolInfo";
 import CarpoolFeature from "../Pages/CarpoolFeature";
 import Profile from "../Pages/Profile";
 import DirectoryPar from "../Pages/DirectoryPar";
+import Donate from "../Pages/Donate";
 
 
 const Router = () => {
@@ -30,6 +31,7 @@ const Router = () => {
       <Route path="/carpool" element={<CarpoolFeature />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/parent/directory" element={<DirectoryPar/>} />
+      <Route path="/donate" element={<Donate />} />
     </Routes>
   );
 };

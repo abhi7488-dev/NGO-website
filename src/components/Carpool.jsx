@@ -130,7 +130,7 @@ const StudentGamingPlatform = () => {
     const mockPlayers = [
       {
         id: 1,
-        name: "GameMaster42",
+        name: "Alex Williams",
         game: "Basketball",
         location: {
           lat: lat + (Math.random() - 0.5) * 0.02,
@@ -144,7 +144,7 @@ const StudentGamingPlatform = () => {
       },
       {
         id: 2,
-        name: "ProPlayer99",
+        name: "Liam Smith",
         game: "Basketball",
         location: {
           lat: lat + (Math.random() - 0.5) * 0.02,
@@ -158,7 +158,7 @@ const StudentGamingPlatform = () => {
       },
       {
         id: 3,
-        name: "NoobSlayer",
+        name: "Oliver Johnson",
         game: "Football",
         location: {
           lat: lat + (Math.random() - 0.5) * 0.02,
@@ -172,7 +172,7 @@ const StudentGamingPlatform = () => {
       },
       {
         id: 4,
-        name: "DarkKnight",
+        name: "Henry Brown",
         game: "Tennis",
         location: {
           lat: lat + (Math.random() - 0.5) * 0.02,
@@ -186,7 +186,7 @@ const StudentGamingPlatform = () => {
       },
       {
         id: 5,
-        name: "QueenGamer",
+        name: "Emma Davis",
         game: "Badminton",
         location: {
           lat: lat + (Math.random() - 0.5) * 0.02,

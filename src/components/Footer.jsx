@@ -6,10 +6,11 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
+import { Link } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#c87047] text-gray-200 py-9">
+    <footer className="bg-[#c87047] text-gray-200 py-7">
       <div className="max-w-[1170px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-8">
           <div className="flex flex-col items-start space-y-6">
@@ -32,12 +33,12 @@ const Footer = () => {
             <h3 className="font-bold mb-3">About Us</h3>
             <ul className="space-y-1">
               <li>
-                <a href="#" className="hover:text-gray-300">
+                <a href="/about/mission" className="hover:text-gray-300">
                   Our Mission
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-300">
+                <a href="/about/team" className="hover:text-gray-300">
                   Meet the Team
                 </a>
               </li>
@@ -48,7 +49,7 @@ const Footer = () => {
             <h3 className="font-bold mb-3">Take Action</h3>
             <ul className="space-y-1">
               <li>
-                <a href="#" className="hover:text-gray-300">
+                <a href="/donate" className="hover:text-gray-300">
                   Donate
                 </a>
               </li>
@@ -120,7 +121,7 @@ const Footer = () => {
             {/* Left Section */}
             <div className="space-y-1">
               <p className="text-sm">
-                &copy; 2024 Basis Phoenix. All rights reserved.
+                &copy; 2025 Basis Phoenix. All rights reserved.
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-sm hover:underline">
@@ -171,6 +172,9 @@ const Footer = () => {
               </a>
             </div>
           </div>
+        </div>
+        <div className="flex justify-end mt-2 text-sm text-gray-300">
+          <a href="https://techmentis.com" target="_blank" rel="noopener noreferrer">Powered By Techmentis</a>
         </div>
       </div>
     </footer>

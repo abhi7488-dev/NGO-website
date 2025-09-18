@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Link } from "lucide-react";
 import Navbar from "./Navbar";
 
-// 👇 Replace with your assets
-// import BgImg1 from "../assets/image1.webp";
-// import BgImg2 from "../assets/image2.webp";
+
 import BgImg3 from "../assets/image.webp";
 
 export default function HeroSection() {
@@ -37,7 +35,7 @@ export default function HeroSection() {
   <Navbar />
 
   {/* Hero Content */}                
-  <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 z-10 pt-[220px]">
+  <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 z-10 pt-[130px]">
     <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
       Together for a Brighter Future
     </h1>
@@ -45,6 +43,12 @@ export default function HeroSection() {
       Empowering students, supporting families, and building a stronger
       community through education, compassion, and opportunity.
     </p>
+
+    <div>
+      <a href="/donate" className="bg-[#c87047] text-white py-2 px-4 rounded hover:bg-[#b05e3d] transition duration-200">
+        Donate Now
+      </a>
+    </div>
   </div>
 </div>
   );

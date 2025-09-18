@@ -131,15 +131,7 @@ const Navbar = ({ bgColor }) => {
             </div>
           </div>
 
-          {/* Log In button
-            <div className="pl-6 hidden md:block">
-              <button
-                className="bg-gray-200 font-semibold text-[#873a17] py-2 px-6 rounded-full 
-      hover:bg-[#c87047] hover:text-white hover:outline hover:outline-2 hover:outline-[#873a17] hover:outline-offset-2"
-              >
-                Log In
-              </button>
-            </div> */}
+         
         </div>
         {/* Mobile Hamburger Button */}
         <div className="md:hidden">
