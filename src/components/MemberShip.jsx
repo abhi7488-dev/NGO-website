@@ -52,16 +52,17 @@ const MembershipForm = () => {
       </div>
 
       {/* Right side form */}
-      <div className="flex-1 flex items-start justify-center p-8">
+      <div className="flex-1 flex items-start justify-center p-10">
             <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                     Membership Registration
                 </h3>
 
-                {/* Name & Email Fields in a two-column layout */}
-                <div className="grid grid-cols-1 gap-4 mb-4">
-                    {/* First Name */}
-                    <div>
+              
+                <div className="grid grid-cols-1 gap-5 mb-4">
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                          <div>
                         <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name*</label>
                         <input
                             type="text"
@@ -87,6 +88,8 @@ const MembershipForm = () => {
                             onChange={handleChange}
                         />
                     </div>
+                    </div>
+                   
                     {/* Email */}
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address*</label>
@@ -119,7 +122,7 @@ const MembershipForm = () => {
                 </div>
 
                 {/* Password Fields in a two-column layout */}
-                <div className="grid grid-cols-1 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-4 mb-8">
                     {/* Password */}
                     <div>
                         <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password*</label>
