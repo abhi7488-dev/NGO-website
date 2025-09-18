@@ -1,5 +1,5 @@
 import React from "react";
-import chairmanImg from "../assets/chairmanimg.jpg";
+import chairmanImg from "../assets/chairmanimg.png";
 import image from "../assets/images.png";
 import stuImage from "../assets/students.webp";
 import parentImg from "../assets/Parents.jpg";
@@ -12,6 +12,7 @@ import learningImg from "../assets/project.png";
 import strengthImg from "../assets/empowerment.png";
 import investImg from "../assets/profits.svg";
 import parentsImg from "../assets/parents.svg";
+import MyStatsComponent from "./MyStatsComponent";
 
 
 
@@ -173,10 +174,10 @@ const DirectorSection = () => {
       <section className="max-w-5xl mx-auto px-4 py-12 text-center">
         {/* Heading */}
         <h2 className="text-[#c87047] font-bold text-[25px] md:text-[34px] mb-12">
-          AFEF IN NUMBERS
+          MAKING A DIFFERENCE A TOGETHER
         </h2>
 
-       {/* Stats Section */}
+       {/* Stats Section
 <section id="stats" className="mt-[84px]">
   <div className="flex flex-wrap justify-center gap-y-12">
     {stats.map((item, index) => (
@@ -184,7 +185,7 @@ const DirectorSection = () => {
         key={index}
         className="w-1/2 md:w-1/3 flex flex-col items-center justify-center relative"
       >
-        {/* Vertical Divider */}
+       
         {(index === 0 || index === 1 || index === 3) && (
           <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-20 w-px bg-gray-300"></span>
         )}
@@ -198,7 +199,9 @@ const DirectorSection = () => {
       </div>
     ))}
   </div>
-</section>
+</section> */}
+
+<MyStatsComponent />
 
       </section>
 
