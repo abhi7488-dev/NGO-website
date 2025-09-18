@@ -27,6 +27,7 @@ const Navbar = ({ bgColor }) => {
       items: [
         { name: "Become a Member", link: "/membership" },
         { name: "Volunteer", link: "/membership/volunteer" },
+        { name: "Donate", link: "/donate" },
       ],
     },
     {
