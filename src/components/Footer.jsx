@@ -7,10 +7,11 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { Link } from "lucide-react";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#c87047] text-gray-200 py-7">
+    <footer className="relative bg-[#c87047] text-gray-200 py-7">
       <div className="max-w-[1170px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-8">
           <div className="flex flex-col items-start space-y-6">
@@ -135,7 +136,7 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-
+ 
             {/* Right Section (Social Links) */}
             <div className="flex space-x-4 mt-4 md:mt-0">
               <a
@@ -173,7 +174,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-end mt-2 text-sm text-gray-300">
+        <ScrollToTopButton />
+        <div className="flex justify-end mt-2 text-sm text-gray-300 hover:underline">
           <a href="https://techmentis.com" target="_blank" rel="noopener noreferrer">Powered By Techmentis</a>
         </div>
       </div>

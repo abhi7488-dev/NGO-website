@@ -254,6 +254,12 @@ const StudentGamingPlatform = () => {
     ]);
   };
 
+  // Close chat
+  const closeChat = () => {
+    setSelectedPlayer(null);
+    setMessages([]);
+  };
+
   // Send a message
   const sendMessage = () => {
     if (!newMessage.trim()) return;
@@ -554,8 +560,8 @@ const StudentGamingPlatform = () => {
                 </div>
               </div>
 
-              {/* Main Content Area - Map and Chat */}
-              <div className="lg:w-3/4 flex flex-col gap-6">
+              {/* Main Content Area - Map */}
+              <div className="lg:w-3/4">
                 {/* Map */}
                 <div className="rounded-xl overflow-hidden shadow-md h-96">
                   {location && (
@@ -620,116 +626,132 @@ const StudentGamingPlatform = () => {
                     </MapContainer>
                   )}
                 </div>
-
-                {/* Chat Box (Below Map) */}
-                {selectedPlayer && (
-                  <div className="bg-white rounded-xl shadow-md border border-gray-200">
-                    {/* Chat Header */}
-                    <div className="bg-gray-700 p-3 text-white flex justify-between items-center rounded-t-xl">
-                      <div className="flex items-center">
-                        <span className="text-xl mr-2">
-                          {selectedPlayer.avatar}
-                        </span>
-                        <div>
-                          <h3 className="text-sm font-semibold">
-                            Chat with {selectedPlayer.name}
-                          </h3>
-                          <span className="text-xs text-gray-200">
-                            {selectedPlayer.game}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <button
-                          onClick={startCall}
-                          className="text-white p-1 rounded-full hover:bg-gray-600 transition-colors"
-                          title="Call"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Messages */}
-                    <div
-                      ref={chatContainerRef}
-                      className="h-70 p-3 overflow-y-auto flex flex-col gap-2 bg-gray-50"
-                    >
-                      {messages.map((msg, index) => (
-                        <div
-                          key={index}
-                          className={`flex max-w-xs ${
-                            msg.sender === "You" ? "ml-auto" : "mr-auto"
-                          }`}
-                        >
-                          {msg.sender !== "You" && (
-                            <span className="text-xl mr-1">{msg.avatar}</span>
-                          )}
-                          <div
-                            className={`flex flex-col ${
-                              msg.sender === "You" ? "items-end" : "items-start"
-                            }`}
-                          >
-                            <div className="text-xs text-gray-500 mb-1">
-                              {msg.sender}
-                            </div>
-                            <div
-                              className={`rounded-lg px-3 py-2 text-sm ${
-                                msg.sender === "You"
-                                  ? "bg-gray-600 text-white rounded-br-none"
-                                  : "bg-white border border-gray-200 rounded-bl-none"
-                              }`}
-                            >
-                              {msg.text}
-                            </div>
-                            <div className="text-xs text-gray-400 mt-1">
-                              {msg.time}
-                            </div>
-                          </div>
-                          {msg.sender === "You" && (
-                            <span className="text-xl ml-1">{msg.avatar}</span>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Message Input */}
-                    <div className="p-3 border-t border-gray-200 flex gap-2 bg-white rounded-b-xl">
-                      <input
-                        type="text"
-                        value={newMessage}
-                        onChange={(e) => setNewMessage(e.target.value)}
-                        onKeyPress={handleKeyPress}
-                        placeholder="Type your message..."
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent text-sm"
-                      />
-                      <button
-                        onClick={sendMessage}
-                        className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg transition-colors text-sm"
-                      >
-                        Send
-                      </button>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           )}
         </div>
       </div>
+
+      {/* Chat Box (Fixed to bottom right) */}
+      {selectedPlayer && (
+        <div className="fixed bottom-4 right-4 w-80 bg-white rounded-xl shadow-lg border border-gray-200 z-[1000]">
+          {/* Chat Header */}
+          <div className="bg-gray-700 p-3 text-white flex justify-between items-center rounded-t-xl">
+            <div className="flex items-center">
+              <span className="text-xl mr-2">{selectedPlayer.avatar}</span>
+              <div>
+                <h3 className="text-sm font-semibold">
+                  Chat with {selectedPlayer.name}
+                </h3>
+                <span className="text-xs text-gray-200">
+                  {selectedPlayer.game}
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={startCall}
+                className="text-white p-1 rounded-full hover:bg-gray-600 transition-colors"
+                title="Call"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={closeChat}
+                className="text-white p-1 rounded-full hover:bg-gray-600 transition-colors"
+                title="Close chat"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Messages */}
+          <div
+            ref={chatContainerRef}
+            className="h-60 p-3 overflow-y-auto flex flex-col gap-2 bg-gray-50"
+          >
+            {messages.map((msg, index) => (
+              <div
+                key={index}
+                className={`flex max-w-xs ${
+                  msg.sender === "You" ? "ml-auto" : "mr-auto"
+                }`}
+              >
+                {msg.sender !== "You" && (
+                  <span className="text-xl mr-1">{msg.avatar}</span>
+                )}
+                <div
+                  className={`flex flex-col ${
+                    msg.sender === "You" ? "items-end" : "items-start"
+                  }`}
+                >
+                  <div className="text-xs text-gray-500 mb-1">
+                    {msg.sender}
+                  </div>
+                  <div
+                    className={`rounded-lg px-3 py-2 text-sm ${
+                      msg.sender === "You"
+                        ? "bg-gray-600 text-white rounded-br-none"
+                        : "bg-white border border-gray-200 rounded-bl-none"
+                    }`}
+                  >
+                    {msg.text}
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">{msg.time}</div>
+                </div>
+                {msg.sender === "You" && (
+                  <span className="text-xl ml-1">{msg.avatar}</span>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Message Input */}
+          <div className="p-3 border-t border-gray-200 flex gap-2 bg-white rounded-b-xl">
+            <input
+              type="text"
+              value={newMessage}
+              onChange={(e) => setNewMessage(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Type your message..."
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent text-sm"
+            />
+            <button
+              onClick={sendMessage}
+              className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg transition-colors text-sm"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Call Modal */}
       {isCalling && selectedPlayer && (

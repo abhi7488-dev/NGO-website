@@ -34,7 +34,7 @@ const Navbar = ({ bgColor }) => {
       title: "Community",
       items: [
         { name: "Community Chat", link: "/community/chat" },
-        { name: "Events Calendar", link: "/community/events" },
+        { name: "Events", link: "/community/events" },
       ],
     },
 
@@ -85,11 +85,14 @@ const Navbar = ({ bgColor }) => {
               <li key={idx} className="relative inline-block group">
                 {/* Normal link if no dropdown */}
                 {!menu.items ? (
-                  <Link to={menu.link}>{menu.title}</Link>
+                  <>
+                    <Link to={menu.link} className="hover:text-[#c87047] cursor-pointer">{menu.title}</Link>
+                    <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#c87047] group-hover:left-0 group-hover:w-full transition-all duration-300"></span>
+                  </>
                 ) : (
                   <>
                     {/* Dropdown trigger */}
-                    <button>{menu.title}</button>
+                    <button className="cursor-pointer hover:text-[#c87047]">{menu.title}</button>
                     <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#c87047] group-hover:left-0 group-hover:w-full transition-all duration-300"></span>
 
                     {/* Dropdown menu */}

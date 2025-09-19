@@ -139,7 +139,7 @@ export default function VolunteerReg() {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 rounded-md font-semibold hover:bg-blue-600 transition"
+              className="w-full bg-[#b25022] text-white py-2 rounded-md font-semibold hover:bg-[#a03e1f] transition"
             >
               Register Now
             </button>

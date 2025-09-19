@@ -134,8 +134,8 @@ const StudentTable = () => {
       <div className="h-[calc(100vh-84px)] overflow-auto shadow-md rounded-lg scroll-smooth bg-gray-50 pt-7 ">
         <div className="flex justify-end mb-4 mr-[120px]">
           <button
-            onClick={() => setIsAddModalOpen(true)} // Use the new state
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center"
+            onClick={() => setIsAddModalOpen(true)}
+            className="bg-[#b25022] hover:bg-[#a03e1f] text-white font-semibold py-2 px-4 rounded-lg flex items-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
