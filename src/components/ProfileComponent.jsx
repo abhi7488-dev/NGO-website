@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import img from "../assets/team3.jpeg";
+import img from "../assets/img.jpg";
 
 const ProfileComponent = () => {
   const [activeTab, setActiveTab] = useState("profile");
   const [userData, setUserData] = useState({
-    name: "John Smith",
-    email: "john.smith@example.com",
-    phone: "(602) 555-0123",
+    name: "Abishek Kumar",
+    email: "abisheksingh70223@gmail.com",
+    phone: "7488007465",
     role: "Parent of Emily Smith (Grade 5)",
     children: [
       { name: "Emily Smith", grade: "Grade 5", teacher: "Mrs. Johnson" },

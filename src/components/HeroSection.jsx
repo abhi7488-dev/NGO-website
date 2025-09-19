@@ -45,7 +45,7 @@ export default function HeroSection() {
     </p>
 
     <div>
-      <a href="/donate" className="bg-[#c87047] text-white py-2 px-4 rounded hover:bg-[#b05e3d] transition duration-200">
+      <a href="/donate" className="bg-[#b25022] text-white py-2 px-4 rounded hover:bg-[#b05e3d] transition duration-200">
         Donate Now
       </a>
     </div>

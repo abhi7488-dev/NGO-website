@@ -52,7 +52,7 @@ const MembershipForm = () => {
       </div>
 
       {/* Right side form */}
-      <div className="flex-1 flex items-start justify-center p-10">
+      <div className="flex-1 flex items-start justify-center p-10 py-20">
             <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                     Membership Registration

@@ -24,7 +24,11 @@ function AnimatedCounter({ endValue, duration = 1000 }) {
     }
   }, [endValue, duration, inView]);
 
-  return <h3 ref={ref} className="text-[30px] md:text-[69px] font-bold text-[#0C2C66]">{count}</h3>;
+  return (
+    <h3 ref={ref} className="text-[30px] md:text-[69px] font-bold text-[#0C2C66]">
+      {count}+
+    </h3>
+  );
 }
 
 const stats = [
@@ -47,6 +51,7 @@ export default function MyStatsComponent() {
               <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-20 w-px bg-gray-300"></span>
             )}
             <AnimatedCounter endValue={item.value} />
+            
             <p className="text-gray-700 font-semibold text-[18px] md:text-[28px] mt-2">
               {item.label}
             </p>

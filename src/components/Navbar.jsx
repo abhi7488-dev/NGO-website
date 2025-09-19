@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/BASIS_Logo.png";
 import { useLocation } from "react-router-dom";
-import userImg from "../assets/team3.jpeg";
+import userImg from "../assets/img.jpg";
 
 const Navbar = ({ bgColor }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -120,13 +120,13 @@ const Navbar = ({ bgColor }) => {
               <Link to="/profile" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
                 Profile
               </Link>
-              <Link to="/dashboards" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
+              <Link to="/" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
                 Dashboards
               </Link>
-              <Link to="/orders" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
+              <Link to="/" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
                 Orders
               </Link>
-              <Link to="#" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
+              <Link to="/" className="block px-4 py-2 hover:bg-[#c87047] hover:text-white">
                 Log Out
               </Link>
             </div>

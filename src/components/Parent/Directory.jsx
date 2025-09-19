@@ -135,7 +135,7 @@ const StudentTable = () => {
         <div className="flex justify-end mb-4 mr-[120px]">
           <button
             onClick={() => setIsAddModalOpen(true)} // Use the new state
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

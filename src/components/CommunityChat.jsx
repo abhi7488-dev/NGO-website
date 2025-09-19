@@ -114,9 +114,9 @@ const CommunityChat = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-2xl my-5 h-[calc(100vh-50px)] flex overflow-hidden">
+    <div className="max-w-6xl mx-auto bg-gray-100 shadow-xl rounded-2xl my-5 h-[calc(100vh-50px)] flex overflow-hidden">
       {/* Sidebar */}
-      <div className="w-80 bg-gradient-to-b from-blue-50 to-gray-50 rounded-l-2xl border-r border-gray-200 flex flex-col">
+      <div className="w-80 bg-gray-50 rounded-l-2xl border-r border-gray-200 flex flex-col">
         {/* Header */}
         <div className="p-4 border-b border-gray-200 bg-white">
           <div className="flex items-center justify-between">

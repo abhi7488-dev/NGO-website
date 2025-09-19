@@ -34,7 +34,7 @@ export default function VolunteerReg() {
 
 
       {/* Right Side Form */}
-      <div className="flex-1 flex justify-center items-start p-7 pt-3">
+      <div className="flex-1 flex justify-center items-start p-7 pt-8">
         <div className="bg-white p-8 w-full max-w-lg rounded-lg shadow-md">
           <h2 className="text-2xl font-bold text-center text-[#0C2C66] mb-6">
             Volunteer Registration
@@ -47,23 +47,26 @@ export default function VolunteerReg() {
               <input
                 type="text"
                 name="name"
+                placeholder="Your full name"
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="mt-1 p-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
 
-            {/* Email */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Email */}
             <div>
               <label className="block text-sm font-medium mb-1">Email</label>
               <input
                 type="email"
                 name="email"
+                placeholder="Your email address"
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="mt-1 p-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
 
@@ -73,12 +76,14 @@ export default function VolunteerReg() {
               <input
                 type="tel"
                 name="phone"
+                placeholder="e.g., +1234567890"
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="mt-1 p-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
+        </div>
 
             {/* Availability */}
             <div>
@@ -87,10 +92,11 @@ export default function VolunteerReg() {
               </label>
               <select
                 name="availability"
+                placeholder="Select your availability"
                 required
                 value={formData.availability}
                 onChange={handleChange}
-                className="w-full border border-gray-300 text-[14px] font-normal rounded-md px-4 py-1.5 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="w-full border border-gray-300 text-[14px] font-normal rounded-md shadow-sm px-4 py-1.5  focus:border-blue-500 focus:ring-blue-500"
               >
                 <option value="">Select...</option>
                 <option value="Weekdays">Weekdays</option>
@@ -111,7 +117,7 @@ export default function VolunteerReg() {
                 placeholder="e.g., Teaching, Event Support"
                 value={formData.interests}
                 onChange={handleChange}
-                className="w-full text-[14px] border border-gray-300 rounded-md px-4 py-1.5 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="w-full text-[14px] border border-gray-300 rounded-md px-4 py-1.5 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
 
@@ -122,17 +128,18 @@ export default function VolunteerReg() {
               </label>
               <textarea
                 name="message"
+                placeholder="Any additional information..."
                 rows="3"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md px-4 py-1 focus:ring-2 focus:ring-[#c87047] focus:outline-none"
+                className="w-full border border-gray-300 rounded-md px-4 py-1 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               ></textarea>
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-[#0C2C66] text-white py-2 rounded-md font-semibold hover:bg-[#123b88] transition"
+              className="w-full bg-blue-500 text-white py-2 rounded-md font-semibold hover:bg-blue-600 transition"
             >
               Register Now
             </button>
