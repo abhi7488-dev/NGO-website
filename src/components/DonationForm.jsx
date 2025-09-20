@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import donateImg from '../assets/donate_img.png';
+import donateImg from '../assets/donation_img.png';
 
 const DonationForm = () => {
   const [formData, setFormData] = useState({
@@ -35,7 +35,7 @@ const DonationForm = () => {
         <img
           src={donateImg}
           alt="Two people placing hearts into a jar"
-          className="w-[600px] h-[520px] "
+          className="w-[600px] h-[560px] rounded-lg object-cover bg-gray-100"
         />
       </div>
 

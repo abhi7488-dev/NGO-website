@@ -34,7 +34,7 @@ const ProfileComponent = () => {
         <div className="flex-1 p-6">
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             {/* Profile Header */}
-            <div className="bg-slate-800 p-6 text-white">
+            <div className="bg-slate-500 p-6 text-white">
               <div className="flex flex-col md:flex-row items-center">
                 <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-blue-600 text-2xl font-bold mb-4 md:mb-0 md:mr-6 overflow-hidden">
                   <img
@@ -165,7 +165,7 @@ const ProfileComponent = () => {
                 ) : (
                   <button
                     onClick={() => setIsEditing(true)}
-                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                    className="px-4 py-2 bg-[#c1621e] text-white rounded hover:bg-[#82320d] transition-colors"
                   >
                     Edit Profile
                   </button>

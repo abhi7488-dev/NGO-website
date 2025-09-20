@@ -1,6 +1,6 @@
 import React from 'react';
 import AddFamilyModal from './AddFamilyModal';
-import EditFamilyModal from './EditFamilyModal'; // Import the new component
+import EditFamilyModal from './EditFamilyModal';
 import { useState } from 'react';
 
 // Student data remains the same...
@@ -79,8 +79,8 @@ const initialStudentsData = [
 
 const StudentTable = () => {
   const [students, setStudents] = useState(initialStudentsData);
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false); // Renamed state for clarity
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false); // New state for edit modal
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
 
   const handleSaveFamily = (formData) => {
@@ -104,6 +104,11 @@ const StudentTable = () => {
     setIsEditModalOpen(true);
   };
 
+  const closeEditModal = () => {
+    setIsEditModalOpen(false);
+    setEditingStudent(null);
+  };
+
   const handleSaveEdit = (editedFormData) => {
     setStudents((prevStudents) =>
       prevStudents.map((student) =>
@@ -124,14 +129,13 @@ const StudentTable = () => {
     closeEditModal();
   };
 
-  const closeEditModal = () => {
-    setIsEditModalOpen(false);
-    setEditingStudent(null);
+  const handleDelete = (studentId) => {
+    setStudents((prevStudents) => prevStudents.filter((student) => student.id !== studentId));
   };
 
   return (
     <div>
-      <div className="h-[calc(100vh-84px)] overflow-auto shadow-md rounded-lg scroll-smooth bg-gray-50 pt-7 ">
+      <div className="h-[calc(100vh-84px)] overflow-auto shadow-md rounded-lg scroll-smooth bg-gray-50 pt-7">
         <div className="flex justify-end mb-4 mr-[120px]">
           <button
             onClick={() => setIsAddModalOpen(true)}
@@ -211,20 +215,38 @@ const StudentTable = () => {
                 </td>
                 <td className="px-5 py-3 whitespace-nowrap text-sm text-gray-700 text-right">
                   <div className="flex items-center justify-end space-x-2">
-                    <svg
-                      onClick={() => AddFamilyModal(student.id)}
-                      className="h-5 w-5 text-gray-400 cursor-pointer"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                    {/* EDIT BUTTON */}
+                    <button onClick={() => openEditModal(student)}>
+                      <svg
+                        className="h-5 w-5 text-indigo-600 hover:text-indigo-900 cursor-pointer"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
                         strokeWidth="2"
-                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                      />
-                    </svg>
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                        />
+                      </svg>
+                    </button>
+                    {/* DELETE BUTTON */}
+                    <button onClick={() => handleDelete(student.id)}>
+                      <svg
+                        className="h-5 w-5 text-red-600 hover:text-red-900 cursor-pointer"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </td>
               </tr>
