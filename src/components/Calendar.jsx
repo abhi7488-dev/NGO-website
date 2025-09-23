@@ -1,91 +1,93 @@
 import React from 'react';
+
+// Use the same images as before
 import waterImg from '../assets/water.jpg';
-import healthImg from '../assets/healthcare.jpg'
-import foodImg from '../assets/food.jpg'
+import healthImg from '../assets/healthcare.jpg';
+import foodImg from '../assets/food.jpg';
 
 const UpcomingEvents = () => {
-  const events = [
-    {
-      id: 1,
-      title: "Clean Water Initiative",
-      date: "October 26, 2025",
-      time: "9:00 AM - 1:00 PM",
-      location: "Riverfront Park",
-      description: "Join us in a community effort to clean up local water sources and raise awareness about water conservation.",
-      image: waterImg,
-      category: "Environment"
-    },
-    {
-      id: 2,
-      title: "Community Health Fair",
-      date: "November 10, 2025",
-      time: "10:00 AM - 4:00 PM",
-      location: "Civic Center",
-      description: "Free health screenings, wellness workshops, and consultations with medical professionals for the whole community.",
-      image: healthImg,
-      category: "Health & Wellness"
-    },
-    {
-      id: 3,
-      title: "Food Donation Drive",
-      date: "December 5, 2025",
-      time: "8:00 AM - 5:00 PM",
-      location: "Main Street Shelter",
-      description: "Help us collect non-perishable food items to support local families in need during the holiday season.",
-      image: foodImg,
-      category: "Hunger Relief"
-    }
-  ];
+    const events = [
+        {
+            id: 1,
+            tag: "Environment",
+            title: "Clean Water Initiative",
+            description: "Join a community effort to clean local water sources and raise awareness about water conservation.",
+            date: "October 26, 2025",
+            location: "Riverfront Park",
+            image: waterImg,
+        },
+        {
+            id: 2,
+            tag: "Health & Wellness",
+            title: "Community Health Fair",
+            description: "Free health screenings, wellness workshops, and consultations with medical professionals.",
+            date: "November 10, 2025",
+            location: "Civic Center",
+            image: healthImg,
+        },
+        {
+            id: 3,
+            tag: "Hunger Relief",
+            title: "Food Donation Drive",
+            description: "Help us collect non-perishable food items to support local families in need during the holiday season.",
+            date: "December 5, 2025",
+            location: "Main Street Shelter",
+            image: foodImg,
+        }
+    ];
 
-  return (
-    <div className="bg-gray-100 py-8">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-gray-800 mt-2 mb-4">Upcoming Events</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Get involved and make a difference! Browse our calendar of upcoming events and find the perfect opportunity to contribute to our cause. Your participation helps us create a better community for everyone.
-          </p>
-        </div>
+    // SVG Icons
+    const CalendarIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" /></svg>;
+    const LocationIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>;
 
-        {/* Events Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {events.map(event => (
-            <div key={event.id} className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-              <img 
-                src={event.image} 
-                alt={event.title} 
-                className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" 
-              />
-              
-              {/* Floating Date & Category Badge */}
-              {/* <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                {event.category}
-              </div> */}
-
-              <div className="p-5">
-                <h2 className="text-xl font-bold text-gray-800 mb-2">{event.title}</h2>
-                <div className="flex items-center text-gray-500 text-sm mb-1">
-                  <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                  <span>{event.date} | {event.time}</span>
+    return (
+        <div className="bg-gray-100 py-15">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-16">
+                    <h1 className="text-5xl font-extrabold text-gray-800 mb-4 tracking-tight">Upcoming Events</h1>
+                    <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                        Get involved and make a difference. Find an opportunity to contribute to our cause.
+                    </p>
                 </div>
-                <div className="flex items-center text-gray-500 text-sm mb-4">
-                  <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                  <span>{event.location}</span>
+
+                {/* CONTAINER CHANGED to a vertical stack for one card per row */}
+                <div className="space-y-12">
+                    {events.map((event, index) => (
+                        <div key={event.id} className="group flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                            
+                            <div className={`relative md:w-5/12 flex-shrink-0 ${index % 2 !== 0 ? 'md:order-last' : ''}`}>
+                                <img src={event.image} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                            </div>
+                            
+                            <div className="flex flex-col flex-grow p-8">
+                                <div className="inline-block bg-[#ac571f] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider mb-4 self-start">
+                                    {event.tag}
+                                </div>
+                                
+                                <h2 className="text-3xl font-bold text-gray-900 mb-3">{event.title}</h2>
+                                <p className="text-gray-600 mb-6 flex-grow">{event.description}</p>
+
+                                <div className="flex flex-wrap gap-x-6 gap-y-3 text-gray-500 text-sm mb-8">
+                                    <div className="flex items-center gap-2">
+                                        <CalendarIcon />
+                                        <span>{event.date}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <LocationIcon />
+                                        <span>{event.location}</span>
+                                    </div>
+                                </div>
+
+                                <button className="font-semibold py-3 px-8 text-white bg-[#b95726] rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-[#a74c22] focus:outline-none focus:ring-2 focus:ring-[#a74c22] focus:ring-offset-2 self-start">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-                <p className="text-gray-700 mb-6">{event.description}</p>
-                <button 
-                  className="w-full bg-[#b25022] text-white font-semibold py-2 px-6 rounded-xl transition-colors duration-300 hover:bg-[#a03e1f] focus:outline-none focus:ring-2 focus:ring-[#b25022] focus:ring-opacity-50"
-                >
-                  Register Now
-                </button>
-              </div>
             </div>
-          ))}
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default UpcomingEvents;
