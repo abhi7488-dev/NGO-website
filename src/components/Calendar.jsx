@@ -13,6 +13,7 @@ const UpcomingEvents = () => {
             title: "Clean Water Initiative",
             description: "Join a community effort to clean local water sources and raise awareness about water conservation.",
             date: "October 26, 2025",
+            time: "10:00 AM - 2:00 PM",
             location: "Riverfront Park",
             image: waterImg,
         },
@@ -22,6 +23,7 @@ const UpcomingEvents = () => {
             title: "Community Health Fair",
             description: "Free health screenings, wellness workshops, and consultations with medical professionals.",
             date: "November 10, 2025",
+            time: "10:00 AM - 2:00 PM",
             location: "Civic Center",
             image: healthImg,
         },
@@ -31,6 +33,7 @@ const UpcomingEvents = () => {
             title: "Food Donation Drive",
             description: "Help us collect non-perishable food items to support local families in need during the holiday season.",
             date: "December 5, 2025",
+            time: "10:00 AM - 2:00 PM",
             location: "Main Street Shelter",
             image: foodImg,
         }
@@ -53,10 +56,10 @@ const UpcomingEvents = () => {
                 {/* CONTAINER CHANGED to a vertical stack for one card per row */}
                 <div className="space-y-12">
                     {events.map((event, index) => (
-                        <div key={event.id} className="group flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                        <div key={event.id} className="group flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300">
                             
-                            <div className={`relative md:w-5/12 flex-shrink-0 ${index % 2 !== 0 ? 'md:order-last' : ''}`}>
-                                <img src={event.image} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                            <div className="relative md:w-5/12 flex-shrink--0">
+                                <img src={event.image} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500"/>
                             </div>
                             
                             <div className="flex flex-col flex-grow p-8">
@@ -67,20 +70,24 @@ const UpcomingEvents = () => {
                                 <h2 className="text-3xl font-bold text-gray-900 mb-3">{event.title}</h2>
                                 <p className="text-gray-600 mb-6 flex-grow">{event.description}</p>
 
-                                <div className="flex flex-wrap gap-x-6 gap-y-3 text-gray-500 text-sm mb-8">
+                                <div className="flex flex-wrap gap-x-10 gap-y-3 text-gray-500 text-sm mb-8">
                                     <div className="flex items-center gap-2">
                                         <CalendarIcon />
                                         <span>{event.date}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
+                                        <span>{event.time}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
                                         <LocationIcon />
                                         <span>{event.location}</span>
                                     </div>
-                                </div>
-
-                                <button className="font-semibold py-3 px-8 text-white bg-[#b95726] rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-[#a74c22] focus:outline-none focus:ring-2 focus:ring-[#a74c22] focus:ring-offset-2 self-start">
+                                      <button className="font-semibold py-3 px-8 text-white bg-[#b95726] rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-[#a74c22] focus:outline-none focus:ring-2 focus:ring-[#a74c22] focus:ring-offset-2 self-start">
                                     Register
                                 </button>
+                                </div>
+
+                              
                             </div>
                         </div>
                     ))}
