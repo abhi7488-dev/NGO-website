@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import donateImg from '../assets/donation_img.png';
+import donateImg from '../assets/donation_img.jpg';
 
 const DonationForm = () => {
   const [formData, setFormData] = useState({
